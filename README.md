@@ -12,6 +12,10 @@ You have found the easiest way to install & manage WireGuard on any Linux host!
   <img src="./assets/screenshot.png" width="802" />
 </p>
 
+## Build Custom Image
+
+docker build -t cakr4/wg-easy:latest .
+
 ## Features
 
 * All-in-one: WireGuard + Web UI.

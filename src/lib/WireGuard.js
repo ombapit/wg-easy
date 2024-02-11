@@ -247,7 +247,8 @@ Endpoint = ${WG_HOST}:${WG_PORT}`;
     }
 
     // Create Client
-    const id = uuid.v4();
+    //const id = uuid.v4();
+    const id = name;
     const client = {
       id,
       name,
