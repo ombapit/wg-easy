@@ -192,14 +192,14 @@ AllowedIPs = ${client.address}/32`;
     return client;
   }
 
-  async getClientConfiguration({ clientId }) {
+  async getClientConfiguration({ clientId, dns }) {
     const config = await this.getConfig();
     const client = await this.getClient({ clientId });
 
     return `[Interface]
 PrivateKey = ${client.privateKey}
 Address = ${client.address}/24
-${WG_DEFAULT_DNS ? `DNS = ${WG_DEFAULT_DNS}\n` : ''}\
+${WG_DEFAULT_DNS ? `DNS = ${dns}\n` : ''}\
 ${WG_MTU ? `MTU = ${WG_MTU}\n` : ''}\
 
 [Peer]

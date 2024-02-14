@@ -115,10 +115,10 @@ module.exports = class Server {
         res.header('Content-Type', 'image/svg+xml');
         res.send(svg);
       }))
-      .get('/api/wireguard/client/:clientId/configuration', Util.promisify(async (req, res) => {
-        const { clientId } = req.params;
+      .get('/api/wireguard/client/:clientId/:dns/configuration', Util.promisify(async (req, res) => {
+        const { clientId, dns } = req.params;
         const client = await WireGuard.getClient({ clientId });
-        const config = await WireGuard.getClientConfiguration({ clientId });
+        const config = await WireGuard.getClientConfiguration({ clientId, dns });
         const configName = client.name
           .replace(/[^a-zA-Z0-9_=+.-]/g, '-')
           .replace(/(-{2,}|-$)/g, '-')
