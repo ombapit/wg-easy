@@ -1,5 +1,6 @@
 # There's an issue with node:20-alpine.
 # Docker deployment is canceled after 25< minutes.
+# build image
 
 FROM docker.io/library/node:18-alpine AS build_node_modules
 
